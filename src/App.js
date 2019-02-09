@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import { withTransition } from "./lib";
+import { effects } from "./lib/effects";
 import "./App.css";
 
 const NavBar = () => (
@@ -29,30 +30,33 @@ const Three = () => (
 
 class App extends Component {
   state = {
-    effect: "fadeAndPop"
+    effect: "swipe",
+    direction: "right",
+    duration: 500
   };
 
-  effects = [
-    "drop",
-    "fadeAndMove",
-    "fadeAndPop",
-    "moveIn",
-    "pop",
-    "scale",
-    "zoom"
-  ];
+  effects = Object.keys(effects);
+  directions = ["up", "down", "right", "left"];
 
   changeEffect = event => {
     const effect = event.target.value;
     this.setState({ effect });
   };
 
-  render() {
-    const { effect } = this.state;
+  changeDirection = event => {
+    const direction = event.target.value;
+    this.setState({ direction });
+  };
 
-    const PlayOne = withTransition({ effect })(One);
-    const PlayTwo = withTransition({ effect })(Two);
-    const PlayThree = withTransition({ effect })(Three);
+  changeDuration = event => {
+    const duration = parseInt(event.target.value, 10);
+    this.setState({ duration });
+  };
+
+  render() {
+    const PlayOne = withTransition({ ...this.state })(One);
+    const PlayTwo = withTransition({ ...this.state })(Two);
+    const PlayThree = withTransition({ ...this.state })(Three);
 
     return (
       <Router>
@@ -71,6 +75,26 @@ class App extends Component {
               </option>
             ))}
           </select>
+          {` | `}
+          Direction:
+          <select value={this.state.direction} onChange={this.changeDirection}>
+            {this.directions.map(direction => (
+              <option
+                value={direction}
+                key={direction}
+                checked={direction === this.state.direction}
+              >
+                {direction}
+              </option>
+            ))}
+          </select>
+          {` | `}
+          Duration:
+          <input
+            type="text"
+            value={this.state.duration}
+            onChange={this.changeDuration}
+          />
           <hr />
           <NavBar />
           <hr />
