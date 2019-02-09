@@ -50,6 +50,7 @@ class App extends Component {
 
   changeDuration = event => {
     const duration = parseInt(event.target.value, 10);
+    if (isNaN(duration)) return;
     this.setState({ duration });
   };
 
