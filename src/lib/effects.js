@@ -39,21 +39,6 @@ export const effects = {
     }
   }),
 
-  drop: props => ({
-    componentDidMount: ({ node, animate }) => {
-      prepareIn(node);
-      return animate({
-        ...props,
-        ...remapPropsToTranslate(props, ["-50%", 0]),
-        easing: "easeOutElastic(1, .5)"
-      });
-    },
-    componentWillUnmount: ({ node }) => {
-      prepareOut(node);
-      return staticTransitionOut(props);
-    }
-  }),
-
   pop: props => ({
     componentDidMount: ({ node, animate }) => {
       prepareIn(node);
@@ -88,7 +73,7 @@ export const effects = {
     }
   }),
 
-  fadeAndMove: props => ({
+  fadeAndSlide: props => ({
     componentDidMount: ({ node, animate }) => {
       prepareIn(node);
       return animate({
@@ -103,19 +88,17 @@ export const effects = {
       return animate({
         ...props,
         ...remapPropsToTranslate(props, [0, "-100%"]),
-        translateX: [0, "-100%"],
         opacity: [1, 0]
       }).finished.then(bufferFinished);
     }
   }),
 
-  moveIn: props => ({
+  slide: props => ({
     componentDidMount: ({ node, animate }) => {
       prepareIn(node);
       return animate({
         ...props,
-        ...remapPropsToTranslate(props, ["100%", 0]),
-        translateX: ["100%", 0]
+        ...remapPropsToTranslate(props, ["100%", 0])
       });
     },
     componentWillUnmount: ({ node, animate }) => {
