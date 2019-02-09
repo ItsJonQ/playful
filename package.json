@@ -9,6 +9,11 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "peerDependencies": {
     "react": "^16 || ^15"
   },
