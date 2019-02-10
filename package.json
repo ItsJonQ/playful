@@ -18,6 +18,25 @@
     "README.md",
     "LICENSE"
   ],
+  "author": "Jon Quach <hello@jonquach.com> (https://jonquach.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsjonq/playful.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itsjonq/playful/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "router",
+    "transition",
+    "motion",
+    "playful",
+    "animation",
+    "anime",
+    "animejs"
+  ],
   "peerDependencies": {
     "react": "^16 || ^15"
   },
