@@ -11,6 +11,7 @@ const defaultOptions = {
   effect: 'fade',
   easing: 'linear',
   duration: 500,
+  pure: true,
 }
 
 /**
@@ -20,12 +21,23 @@ const defaultOptions = {
  * @returns {React.Component} The enhanced React component.
  */
 const withTransition = (options = defaultOptions) => WrappedComponent => {
-  const {componentDidUpdate, direction, duration, effect, easing} = {
+  const mergedOptions = {
     ...defaultOptions,
     ...options,
   }
 
-  class PlayTransition extends React.PureComponent {
+  const {
+    componentDidUpdate,
+    direction,
+    duration,
+    effect,
+    easing,
+    pure,
+  } = mergedOptions
+
+  const OuterBaseComponent = pure ? React.PureComponent : React.Component
+
+  class PlayTransition extends OuterBaseComponent {
     render() {
       return <WrappedComponent {...this.props} />
     }
