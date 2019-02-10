@@ -1,7 +1,7 @@
 {
   "name": "press-play",
   "description": "A simple transition library for React (and routers!)",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "private": false,
   "scripts": {
