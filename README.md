@@ -9,6 +9,9 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Effects](#effects)
+- [Direction](#direction)
+- [Example](#example)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -48,3 +51,31 @@ const App = () => {
   )
 }
 ```
+
+## Effects
+
+Playful supports the following transition effects:
+
+- fade
+- fadeAndPop
+- fadeAndSlide
+- pop
+- scale
+- slide
+- swipe
+- zoom
+
+## Direction
+
+The following directions can be applied to directonal moving effects:
+
+- `up`
+- `down`
+- `left`
+- `right`
+
+The default direction is `right`.
+
+## Example
+
+[Check out the Storybook example!](https://react-playful.netlify.com/iframe.html?selectedKind=Playful&selectedStory=Example&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
