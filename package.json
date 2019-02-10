@@ -38,7 +38,8 @@
     "react-router-dom": "^4.3.1"
   },
   "dependencies": {
-    "@helpscout/motion": "0.0.5"
+    "@helpscout/motion": "0.0.5",
+    "hoist-non-react-statics": "^3.3.0"
   },
   "resolutions": {
     "ajv": "6.8.1"

@@ -1,5 +1,6 @@
 import React from 'react'
 import {withMotion} from '@helpscout/motion'
+import hoistNonReactStatics from 'hoist-non-react-statics'
 import {getEffectMethods} from './effects'
 
 const defaultOptions = {
@@ -41,7 +42,7 @@ const withTransition = (options = defaultOptions) => WrappedComponent => {
     componentDidUpdate,
   })(PlayTransition)
 
-  return EnhancedComponent
+  return hoistNonReactStatics(EnhancedComponent, WrappedComponent)
 }
 
 export default withTransition
