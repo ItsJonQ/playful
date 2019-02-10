@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import { withTransition } from "./lib";
-import { effects } from "./lib/effects";
-import "./App.css";
+import React, {Component} from 'react'
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
+import {withTransition} from '../src/index'
+import {effects} from '../src/effects'
+import './App.css'
 
 const NavBar = () => (
   <div>
@@ -10,54 +10,54 @@ const NavBar = () => (
     <NavLink to="/two">Page Two</NavLink>
     <NavLink to="/three">Page Three</NavLink>
   </div>
-);
+)
 
 const One = () => (
   <div className="slide one">
     <div>One</div>
   </div>
-);
+)
 const Two = () => (
   <div className="slide two">
     <div>Two</div>
   </div>
-);
+)
 const Three = () => (
   <div className="slide three">
     <div>Three</div>
   </div>
-);
+)
 
 class App extends Component {
   state = {
-    effect: "swipe",
-    direction: "right",
-    duration: 500
-  };
+    effect: 'swipe',
+    direction: 'right',
+    duration: 500,
+  }
 
-  effects = Object.keys(effects);
-  directions = ["up", "down", "right", "left"];
+  effects = Object.keys(effects)
+  directions = ['up', 'down', 'right', 'left']
 
   changeEffect = event => {
-    const effect = event.target.value;
-    this.setState({ effect });
-  };
+    const effect = event.target.value
+    this.setState({effect})
+  }
 
   changeDirection = event => {
-    const direction = event.target.value;
-    this.setState({ direction });
-  };
+    const direction = event.target.value
+    this.setState({direction})
+  }
 
   changeDuration = event => {
-    const duration = parseInt(event.target.value, 10);
-    if (isNaN(duration)) return;
-    this.setState({ duration });
-  };
+    const duration = parseInt(event.target.value, 10)
+    if (isNaN(duration)) return
+    this.setState({duration})
+  }
 
   render() {
-    const PlayOne = withTransition({ ...this.state })(One);
-    const PlayTwo = withTransition({ ...this.state })(Two);
-    const PlayThree = withTransition({ ...this.state })(Three);
+    const PlayOne = withTransition({...this.state})(One)
+    const PlayTwo = withTransition({...this.state})(Two)
+    const PlayThree = withTransition({...this.state})(Three)
 
     return (
       <Router>
@@ -107,8 +107,8 @@ class App extends Component {
           </p>
         </div>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App

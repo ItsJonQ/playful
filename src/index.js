@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import withTransition from './withTransition'
+export {default as withTransition} from './withTransition'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default withTransition

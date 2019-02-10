@@ -1,16 +1,16 @@
-import React from "react";
-import { withMotion } from "@helpscout/motion";
-import { getEffectMethods } from "./effects";
+import React from 'react'
+import {withMotion} from '@helpscout/motion'
+import {getEffectMethods} from './effects'
 
 const defaultOptions = {
   componentDidMount: () => Promise.resolve(),
   componentDidUpdate: () => Promise.resolve(),
   componentWillUnmount: () => Promise.resolve(),
-  direction: "right",
-  effect: "fade",
-  easing: "linear",
-  duration: 500
-};
+  direction: 'right',
+  effect: 'fade',
+  easing: 'linear',
+  duration: 500,
+}
 
 /**
  * The Higher-Order component that binds the WrappedComponent with
@@ -19,29 +19,29 @@ const defaultOptions = {
  * @returns {React.Component} The enhanced React component.
  */
 const withTransition = (options = defaultOptions) => WrappedComponent => {
-  const { componentDidUpdate, direction, duration, effect, easing } = {
+  const {componentDidUpdate, direction, duration, effect, easing} = {
     ...defaultOptions,
-    ...options
-  };
+    ...options,
+  }
 
   class PlayTransition extends React.PureComponent {
     render() {
-      return <WrappedComponent {...this.props} />;
+      return <WrappedComponent {...this.props} />
     }
   }
 
   const effectProps = {
     direction,
     duration,
-    easing
-  };
+    easing,
+  }
 
   const EnhancedComponent = withMotion({
     ...getEffectMethods(effect)(effectProps),
-    componentDidUpdate
-  })(PlayTransition);
+    componentDidUpdate,
+  })(PlayTransition)
 
-  return EnhancedComponent;
-};
+  return EnhancedComponent
+}
 
-export default withTransition;
+export default withTransition

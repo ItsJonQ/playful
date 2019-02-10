@@ -5,12 +5,12 @@
   "main": "dist/index.js",
   "private": false,
   "scripts": {
-    "start": "react-scripts start",
-    "build:lib": "zero build --out-dir=lib",
-    "build:dist": "sh scripts/build-dist.sh",
-    "build": "react-scripts build",
-    "test": "npm run build:dist",
-    "eject": "react-scripts eject"
+    "start": "npm run storybook",
+    "build": "zero build",
+    "test": "npm run build",
+    "precommit": "zero pre-commit",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "files": [
     "dist",
@@ -21,24 +21,24 @@
     "react": "^16 || ^15"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
     "@helpscout/zero": "^1.0.3",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-links": "^4.1.11",
+    "@storybook/addons": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "ajv": "^6.8.1",
+    "babel-loader": "^8.0.5",
     "np": "^4.0.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.3"
+    "react-router-dom": "^4.3.1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "dependencies": {
-    "@helpscout/motion": "0.0.3"
+    "@helpscout/motion": "0.0.5"
+  },
+  "resolutions": {
+    "ajv": "6.8.1"
   }
 }
