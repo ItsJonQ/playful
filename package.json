@@ -1,5 +1,5 @@
 {
-  "name": "press-play",
+  "name": "playful",
   "description": "A simple transition library for React (and routers!)",
   "version": "0.0.3",
   "main": "dist/index.js",

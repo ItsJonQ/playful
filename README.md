@@ -1,4 +1,4 @@
-# ▶️ Press Play
+# ▶️ Playful
 
 > A simple transition library for React (and routers!)
 
@@ -15,13 +15,13 @@
 ## Installation
 
 ```
-npm install --save press-play
+npm install --save playful
 ```
 
 ## Usage
 
 ```jsx
-import {withTransition} from 'press-play'
+import {withTransition} from 'playful'
 
 // Create your components as you normally would
 const MyComponent = () => <div>My Content</div>

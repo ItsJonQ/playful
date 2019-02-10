@@ -62,7 +62,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <h1>▶️ Press Play</h1>
+          <h1>▶️ Playful</h1>
           <p>A simple transition library for React (and routers!)</p>
           Effect:
           <select value={this.state.effect} onChange={this.changeEffect}>
