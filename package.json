@@ -6,7 +6,10 @@
   "private": false,
   "scripts": {
     "start": "react-scripts start",
+    "build:lib": "zero build --out-dir=lib",
+    "build:dist": "sh scripts/build-dist.sh",
     "build": "react-scripts build",
+    "test": "npm run build:dist",
     "eject": "react-scripts eject"
   },
   "files": [
@@ -18,6 +21,7 @@
     "react": "^16 || ^15"
   },
   "devDependencies": {
+    "@helpscout/zero": "^1.0.3",
     "np": "^4.0.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
