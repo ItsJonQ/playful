@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@helpscout/motion": "0.0.5",
-    "hoist-non-react-statics": "^3.3.0"
+    "@helpscout/react-utils": "^2.0.1"
   },
   "resolutions": {
     "ajv": "6.8.1"

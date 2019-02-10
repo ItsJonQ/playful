@@ -1,6 +1,7 @@
 import React from 'react'
 import {withMotion} from '@helpscout/motion'
-import hoistNonReactStatics from 'hoist-non-react-statics'
+import hoistNonReactStatics from '@helpscout/react-utils/dist/hoistNonReactStatics'
+import wrapComponentName from '@helpscout/react-utils/dist/wrapComponentName'
 import {getEffectMethods} from './effects'
 
 const defaultOptions = {
@@ -38,6 +39,9 @@ const withTransition = (options = defaultOptions) => WrappedComponent => {
   const OuterBaseComponent = pure ? React.PureComponent : React.Component
 
   class PlayTransition extends OuterBaseComponent {
+    static displayName = wrapComponentName(WrappedComponent, 'withTransition')
+    WrappedComponent = WrappedComponent
+
     render() {
       return <WrappedComponent {...this.props} />
     }
