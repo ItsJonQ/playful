@@ -21,6 +21,10 @@
   "peerDependencies": {
     "react": "^16 || ^15"
   },
+  "dependencies": {
+    "@helpscout/motion": "0.0.5",
+    "@helpscout/react-utils": "^2.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@helpscout/zero": "^1.0.3",
@@ -36,10 +40,6 @@
     "react-dom": "^16.8.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1"
-  },
-  "dependencies": {
-    "@helpscout/motion": "0.0.5",
-    "@helpscout/react-utils": "^2.0.1"
   },
   "resolutions": {
     "ajv": "6.8.1"
